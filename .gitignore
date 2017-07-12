@@ -22,3 +22,4 @@ hs_err_pid*
 src/main/resources/
 src/test/
 /sakila-spring.iml
+/nb-configuration.xml
