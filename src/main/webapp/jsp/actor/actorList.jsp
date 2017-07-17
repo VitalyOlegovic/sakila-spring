@@ -1,8 +1,10 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<html>
+<!DOCTYPE html>
+<html lang="it">
 <head>
-<title>Actor List</title>
+    <title>Actor List</title>
+    <meta charset="UTF-8">
 </head>
 <body>
 	<h1>Actor List</h1>
