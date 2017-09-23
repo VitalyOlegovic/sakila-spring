@@ -6,13 +6,13 @@
 	xmlns:tx="http://www.springframework.org/schema/tx"
 	xmlns:jpa="http://www.springframework.org/schema/data/jpa"
 	xsi:schemaLocation="
-	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd 
+	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 	http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
 	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
 	http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd
 	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd
 	http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
-	
+
 	<mvc:annotation-driven />
 	<context:component-scan base-package="sakilaspring" />
 
@@ -24,18 +24,18 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 
-	<!-- Configure the data source bean -->
-	
-	<jee:jndi-lookup id="dataSource" jndi-name="java:/MySqlDS" />
-		
-	<!--  
+	<!-- Configure the data source bean
+
+	<jee:jndi-lookup id="dataSource" jndi-name="java:/MySqlDS" /> -->
+
+	<!--  -->
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
         <property name="url" value="jdbc:mysql://192.168.1.2:3306/sakila?useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC"/>
         <property name="username" value="sakila"/>
         <property name="password" value="sakila"/>
     </bean>
-    -->
+  <!--  -->
 
 	<!-- Create default configuration for Hibernate -->
 	<bean id="hibernateJpaVendorAdapter"
@@ -71,7 +71,7 @@
 	<!-- Enable annotation driven transaction management -->
 	<tx:annotation-driven />
 
-	<!-- Configure Spring Data JPA and set the base package of the repository 
+	<!-- Configure Spring Data JPA and set the base package of the repository
 		interfaces -->
 	<jpa:repositories base-package="sakilaspring.domain" />
 

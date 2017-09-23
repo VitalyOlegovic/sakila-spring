@@ -6,6 +6,19 @@
 <head>
     <title>Edit actor</title>
     <meta charset="UTF-8">
+    <style>
+    body {
+        margin-left: 20%;
+        margin-right: 20%;
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+    section {
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    </style>
 </head>
 <body>
 	<h1>Edit actor</h1>
@@ -13,13 +26,17 @@
 		<fieldset>
 		    <legend>Actor data</legend>
 			<form:hidden path="actorId"/>
+			<section>
 			<form:label path="firstName">First name</form:label>
 			<form:input path="firstName"/>
+			</section>
+			<section>
 			<form:label path="lastName">Last name</form:label>
 			<form:input path="lastName"/>
-			
+			</section>
+			<button type="submit">Submit</button>
 		</fieldset>
-		<button type="submit">Submit</button>
+
 	</form:form>
 </body>
 </html>

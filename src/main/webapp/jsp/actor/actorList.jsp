@@ -5,6 +5,35 @@
 <head>
     <title>Actor List</title>
     <meta charset="UTF-8">
+    <style type = "text/css">
+        body {
+            margin-left: 10%;
+            margin-top: 5%;
+            margin-bottom: 5%;
+        }
+        table {
+            width: 50%;
+        }
+        table, td, th, thead {
+            border: 1px solid gray;
+            border-collapse: collapse;
+        }
+        thead {
+            font-weight: bold;
+        }
+        nav {
+            margin-bottom: 10px
+        }
+        @media screen and (max-width: 900px) {
+            body{
+                margin-left: 10px;
+                margin-top: 0px;
+            }
+            table{
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
 	<h1>Actor List</h1>
