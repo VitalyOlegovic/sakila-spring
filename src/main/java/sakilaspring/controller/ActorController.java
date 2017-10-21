@@ -23,19 +23,8 @@ public class ActorController {
 	@Autowired
 	ActorDAO actorDAO;
 	
-	@ModelAttribute("formBean")
-	public Actor createFormBean() {
-		return new Actor();
-	}
-	
 	@RequestMapping(value="/actor", method=RequestMethod.GET)
 	public void form() {
-	}
-	
-	@RequestMapping(value="/actor", method=RequestMethod.POST)
-	public String processSubmit(Actor actor, BindingResult result, 
-								Model model, RedirectAttributes redirectAttrs) {
-		return "";
 	}
 	
 	@RequestMapping(value="/actor/actorList", method=RequestMethod.GET)
