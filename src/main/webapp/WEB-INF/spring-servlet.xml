@@ -28,10 +28,17 @@
 
 	<jee:jndi-lookup id="dataSource" jndi-name="java:/MySqlDS" /> -->
 
-	<!--  -->
+	<!--  
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
         <property name="url" value="jdbc:mysql://localhost:3306/anagrafe?useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC"/>
+        <property name="username" value="sakila"/>
+        <property name="password" value="sakila"/>
+    </bean>-->
+    
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="org.h2.Driver"/>
+        <property name="url" value="jdbc:h2:file:~/test;AUTOCOMMIT=ON;AUTO_SERVER=TRUE"/>
         <property name="username" value="sakila"/>
         <property name="password" value="sakila"/>
     </bean>
@@ -49,8 +56,9 @@
 		<!-- Set JPA properties -->
 		<property name="jpaProperties">
 			<props>
-				<prop key="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</prop>
-				<prop key="javax.persistence.schema-generation.database.action">none</prop>
+				<!-- <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</prop>  -->
+				<prop key="hibernate.dialect">org.hibernate.dialect.H2Dialect</prop>
+				<prop key="javax.persistence.schema-generation.database.action">update</prop>
 				<prop key="hibernate.ejb.use_class_enhancer">true</prop>
                                 <prop key="hibernate.show_sql">true</prop>
 			</props>

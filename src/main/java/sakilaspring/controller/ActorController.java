@@ -26,7 +26,7 @@ public class ActorController {
 	@RequestMapping(value="/actor/actorList", method=RequestMethod.GET)
 	public String actorList(Model model) {
 		List<Actor> list = actorDAO.list();
-		model.addAttribute("listlista", list);
+		model.addAttribute("lista", list);
 		return "/actor/actorList";
 	}
 	
