@@ -46,7 +46,7 @@
 			<th>Edit</th>
 			<th>Delete</th>
 		</tr>
-		<c:forEach var="actor" items="${list}">
+		<c:forEach var="actor" items="${lista}">
 			<tr>
 				<td>${actor.actorId}</td>
 				<td>${actor.firstName}</td>

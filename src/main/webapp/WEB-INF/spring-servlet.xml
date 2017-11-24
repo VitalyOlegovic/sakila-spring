@@ -31,7 +31,7 @@
 	<!--  -->
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://192.168.1.2:3306/sakila?useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/anagrafe?useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC"/>
         <property name="username" value="sakila"/>
         <property name="password" value="sakila"/>
     </bean>

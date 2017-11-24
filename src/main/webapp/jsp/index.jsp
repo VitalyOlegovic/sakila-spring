@@ -15,6 +15,6 @@
 		<h1>Sakila Spring</h1>
 		
 		<a href="actor/actorList">Actor list</a>
-		<a href="actor/newActor">New actor</a>
+		<a href="actor/newActor">New actor</a><br/>
 	</body>
 </html>

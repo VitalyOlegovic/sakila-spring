@@ -5,14 +5,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
 import sakilaspring.dao.ActorDAO;
 import sakilaspring.domain.Actor;
 
@@ -30,7 +26,7 @@ public class ActorController {
 	@RequestMapping(value="/actor/actorList", method=RequestMethod.GET)
 	public String actorList(Model model) {
 		List<Actor> list = actorDAO.list();
-		model.addAttribute("list", list);
+		model.addAttribute("listlista", list);
 		return "/actor/actorList";
 	}
 	

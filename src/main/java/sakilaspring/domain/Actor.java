@@ -65,6 +65,12 @@ public class Actor implements Serializable {
 	public void setLastUpdate(Timestamp lastUpdate) {
 		this.lastUpdate = lastUpdate;
 	}
+
+	@Override
+	public String toString() {
+		return "Actor [actorId=" + actorId + ", firstName=" + firstName + ", lastName=" + lastName + ", lastUpdate="
+				+ lastUpdate + "]";
+	}
 	
 	
 }
