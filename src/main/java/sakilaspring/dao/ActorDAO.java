@@ -1,10 +1,11 @@
 package sakilaspring.dao;
 
+import java.sql.Timestamp;
 import java.util.List;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.TypedQuery;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import jakarta.persistence.TypedQuery;
 
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -38,11 +39,15 @@ public class ActorDAO {
 		Actor a1 = em.find(Actor.class, a.getActorId());
 		a1.setFirstName(a.getFirstName());
 		a1.setLastName(a.getLastName());
+		a1.setLastUpdate(new Timestamp(System.currentTimeMillis()));
 		em.persist(a1);
 	}
 
 	@Transactional
-	public void save(Actor a) {;
+	public void save(Actor a) {
+	    if(a.getLastUpdate()==null){
+			a.setLastUpdate(new Timestamp(System.currentTimeMillis()));
+		}
 		em.persist(a);
 	}
 	

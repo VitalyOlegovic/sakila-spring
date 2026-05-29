@@ -27,7 +27,7 @@ public class ActorController {
 	public String actorList(Model model) {
 		List<Actor> list = actorDAO.list();
 		model.addAttribute("lista", list);
-		return "/actor/actorList";
+		return "actor/actorList";
 	}
 	
 	@RequestMapping(value="/actor/newActor", method=RequestMethod.GET)
@@ -38,26 +38,26 @@ public class ActorController {
 	@RequestMapping(value="/actor/newActor", method=RequestMethod.POST)
 	public String saveActor(Actor actor, Model model){
 		actorDAO.save(actor);
-		return "redirect:" + actorList(model);
+		return "redirect:/actor/actorList";
 	}
 	
 	@RequestMapping(value="/actor/editActor/{actorId}", method=RequestMethod.GET)
-	public String editActor(Model model, @PathVariable short actorId){
-		Actor a = actorDAO.byId(actorId);
-		model.addAttribute("actor", a);
-		return "/actor/editActor";
-	}
+    public String editActor(Model model, @PathVariable("actorId")  short actorId){
+        Actor a = actorDAO.byId(actorId);
+        model.addAttribute("actor", a);
+        return "actor/editActor";
+    }
 	
 	@RequestMapping(value="/actor/editActor/{actorId}", method=RequestMethod.POST)
-	public String updateActor(Actor actor, @PathVariable short actorId, Model model){
+	public String updateActor(Actor actor, @PathVariable("actorId")  short actorId, Model model){
 		actor.setActorId(actorId);
 		actorDAO.update(actor);
-		return "redirect:" + actorList(model);
+		return "redirect:/actor/actorList"; 
 	}
 	
 	@RequestMapping(value="/actor/deleteActor/{actorId}", method=RequestMethod.GET)
-	public String deleteActor(Model model, @PathVariable short actorId){
+	public String deleteActor(Model model, @PathVariable("actorId") short actorId){
 		actorDAO.delete(actorId);
-		return "redirect:" + actorList(model);
+		return "redirect:/actor/actorList";
 	}
 }
